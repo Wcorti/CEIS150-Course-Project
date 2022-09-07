@@ -1,5 +1,8 @@
-#CEIS150 Wesley Corti
+# Summary: This module contains the class definitions that will be used in the stock analysis program
+# Author: Wesley Corti
+# Date: 9/5/2022
 
+# Create Stock class here
 class Stock:
     def __init__(self, symbol, name, shares):
         self.symbol = symbol
@@ -9,14 +12,14 @@ class Stock:
     
     def add_data(self, stock_data):
         self.DataList.append(stock_data)
-        
+
+# Create DailyData class here.        
 class DailyData:
     def __init__(self, date, close, volume):
         self.date = date
         self.close = close
         self.volume = volume
         
-
 # Unit Test - Do Not Change Code Below This Line *** *** *** *** *** *** *** *** ***
 # main() is used for unit testing only. It will run when stock_class.py is run.
 # Run this to test your class code. Once you have eliminated all errors, you are
