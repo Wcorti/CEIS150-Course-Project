@@ -1,4 +1,4 @@
-# Summary: This module contains the class definitions that will be used in the stock analysis program
+# Summary: This module contains class definitions that will be used in the stock analysis program.
 # Author: Wesley Corti
 # Date: 9/5/2022
 

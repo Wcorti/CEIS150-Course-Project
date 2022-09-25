@@ -1,4 +1,6 @@
-#CEIS150 Wesley Corti
+# Summary: This program will find all prices greater than a minimum price. It was used as a review of python programming.
+# Author: Wesley Corti
+# Date: 8/29/2022
 
 count = 0
 sum = 0
