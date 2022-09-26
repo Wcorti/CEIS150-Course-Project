@@ -87,20 +87,18 @@ def add_stock_data(stock_list):
         print("Enter Date,Price,Volume")
         print("Example: 8/28/20,47.85,10550")
         data = input("Enter Date,Price,Volume: ")
-        goodinput4 = False
+        goodinput4 = False # input validation loop
         while not goodinput4 :
             if data == "":
                 goodinput4 = True
                 print("Date Entry Complete")
+                _ = input("*** Press Enter to Continue ***")
                 break 
             try:
                 date, price, volume = data.split(",")
-                daily_data = DailyData(date,float(price),float(volume))
+                daily_data = DailyData(datetime.strptime(date,"%m/%d/%y"),float(price),float(volume))
                 current_stock.add_data(daily_data)
                 data = input("Enter Date,Price,Volume: ")
-                if data == "":
-                    goodinput4 = True
-                    print("Date Entry Complete") 
             except ValueError:
                 print("ERROR enter Data per instructions")
                 print("Enter Data Separated by Commas - Do Not use Spaces")
@@ -211,6 +209,7 @@ def display_chart(stock_list):
             current_stock = stock
     if found == True:
         display_stock_chart(stock_list, current_stock.symbol)
+        _=input("Press Enter to Continue ***")
     else:
         print("Symbol Not Found ***")
         _=input("Press Enter to Continue ***")
