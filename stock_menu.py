@@ -3,8 +3,6 @@
 # Date: 9/20/2022
 
 from datetime import date, datetime
-from operator import contains
-from this import s
 from stock_class import Stock, DailyData
 from account_class import  Traditional, Robo
 import matplotlib.pyplot as plt
@@ -193,7 +191,6 @@ def display_stock_chart(stock_list,symbol):
     plt.title(company)
     plt.show()
 
-
 # Display Chart
 def display_chart(stock_list):
     print("Stock Chart--")
@@ -239,7 +236,6 @@ def main_menu(stock_list):
         if option =="0":
             print("Goodbye")
             break
-        
         if option == "1":
             add_stock(stock_list)
         elif option == "2":
@@ -255,7 +251,6 @@ def main_menu(stock_list):
         elif option == "7":
             import_stock_csv(stock_list)
         else:
-            
             print("Goodbye")
 
 # Begin program
