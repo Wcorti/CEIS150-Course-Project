@@ -223,15 +223,17 @@ def import_stock_csv(stock_list):
     filename = input("Enter file name: ")
     for stock in stock_list:
         if stock.symbol == symbol:
-            with open(filename, newline= '') as stockdata:
-                datareader = csv.reader(stockdata, delimiter= ',')
-                next(datareader)
-                for row in datareader:
-                    daily_data = DailyData(str(row[0]), float(row[4]), float(row[6]))
-                    stock.add_data(daily_data)
+            try:
+                with open(filename, newline= '') as stockdata:
+                    datareader = csv.reader(stockdata, delimiter= ',')
+                    next(datareader)
+                    for row in datareader:
+                        daily_data = DailyData(str(row[0]), float(row[4]), float(row[6]))
+                        stock.add_data(daily_data)
+            except FileNotFoundError:
+                print("File not Found")
+
     display_report(stock_list)
-
-
     
 # Display Report 
 def display_report(stock_list):
@@ -240,10 +242,10 @@ def display_report(stock_list):
         print("Report for: ", stock.symbol, stock.name)
         print("Shares: ", stock.shares)
         count = 0
-        price_total = 0
+        price_total = 0.00
         volume_total = 0
         lowPrice = 999999.99
-        highPrice = 0
+        highPrice = 0.00
         lowVolume = 999999999999
         highVolume = 0
         for daily_data in stock.DataList:
